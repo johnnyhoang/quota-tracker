@@ -2,6 +2,11 @@
   "name": "quota-tracker",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://quota.minkoi.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnnyhoang/quota-tracker.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

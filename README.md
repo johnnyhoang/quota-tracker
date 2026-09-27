@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# Quota Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dashboard quản lý chi phí thuê bao trực tuyến, hạn mức tài khoản AI và theo dõi token burn-down theo thời gian thực.
 
-Currently, two official plugins are available:
+- **Production URL:** [https://quota.minkoi.org](https://quota.minkoi.org)
+- **Repository:** [https://github.com/johnnyhoang/quota-tracker](https://github.com/johnnyhoang/quota-tracker)
+- **Developer:** [johnnyhoang](https://github.com/johnnyhoang)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Tính năng chính
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Token Wallet & AI Quota Tracking:**
+   - Quản lý hạn mức sử dụng (RPM, RPD, TPM, TPD) cho các provider: OpenAI, Anthropic, Gemini, DeepSeek, Groq, OpenRouter...
+   - Theo dõi token burn-down rate và dự báo thời gian cạn quota.
+   - Quản lý API Key an toàn và phân quyền người dùng theo vai trò.
 
-## Expanding the Oxlint configuration
+2. **Payment & Subscription Schedules:**
+   - Theo dõi lịch thanh toán định kỳ cho các dịch vụ SaaS, Hosting, AI Subscriptions.
+   - Nhắc nhở hạn thanh toán và thống kê tổng chi phí hàng tháng/năm.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+3. **Bảo mật & Phân quyền:**
+   - Tích hợp Supabase Auth (Google & GitHub OAuth).
+   - Phân quyền chi tiết (Admin / Viewer) với Row Level Security (RLS).
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+---
+
+## Tech Stack
+
+- **Frontend:** React 19, Vite 8, TypeScript, Tailwind CSS, Lucide Icons
+- **Backend & Database:** Supabase PostgreSQL, Row Level Security (RLS), Supabase Realtime
+- **Deployment:** Vercel Edge Network ([https://quota.minkoi.org](https://quota.minkoi.org))
+
+---
+
+## Cài đặt & Phát triển cục bộ
+
+```bash
+# Cài đặt dependencies
+npm install
+
+# Khởi chạy dev server
+npm run dev
+
+# Build production
+npm run build
+
+# Kiểm tra lint
+npm run lint
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
